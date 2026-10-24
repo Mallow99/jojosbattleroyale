@@ -3,7 +3,16 @@
 Prepared October 24, 2026. This is the latest handoff. Read it before the older
 `docs/HANDOFF.md`, which describes an earlier setup stage.
 
-## What I want you to do now
+## Update — Star Platinum cutscene delivered for review
+
+The user asked for a Star Platinum model and a disc-to-neck awakening cutscene that work in
+Roblox Studio. They also said to ignore the source leads below. They rejected a parts-only
+"knock-off" attempt and then confirmed this direction: a real R6 rig, a mesh morph imported
+via Studio's 3D Importer, R6 KeyframeSequences, and a client cutscene. That is delivered in
+`docs/STAND_CUTSCENE.md` with automated checks. It has **not** been run in Studio. The next
+step is the user's Studio test and feedback.
+
+## What I want you to do now (earlier task, superseded for Star Platinum)
 
 Continue finding and preparing a good **Star Platinum model for our Roblox game**.
 Search existing models first. Use the new chat's intended broader network access

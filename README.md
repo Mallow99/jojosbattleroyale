@@ -8,6 +8,11 @@ and swap Stand discs. The initial Stands are **Star Platinum and Magician's Red*
 Victory requires obtaining the Requiem Arrow and completing a contested
 activation at the final landmark. The last survivor must still activate it.
 
+**First asset:** the [Star Platinum awakening cutscene](docs/STAND_CUTSCENE.md). It
+includes an R6 Star Platinum rig, a mesh morph to import with Studio's 3D Importer, R6
+KeyframeSequences for the player and the stand, a client cutscene module, and a demo place
+(`stand.project.json`). Open it in Studio by following that page.
+
 The [game plan](docs/GAME_PLAN.md) contains the match rules, progression,
 technical architecture, monetization defaults and delivery gates. The
 [art direction](docs/ART_DIRECTION.md) records the rejection of the first model;
@@ -35,6 +40,7 @@ and FFmpeg; both are installed in this workspace.
 - [AI tool assessment, including Higgsfield](docs/AI_TOOLS.md)
 - [Resource candidates and provenance](docs/RESOURCES.md)
 - [Star Platinum model search](docs/MODEL_SEARCH.md)
+- [Star Platinum awakening cutscene](docs/STAND_CUTSCENE.md)
 - [Current art direction and rejected prototype](docs/ART_DIRECTION.md)
 - [Supplied game plan](docs/GAME_PLAN.md)
 - [Historical setup handoff](docs/HANDOFF.md)

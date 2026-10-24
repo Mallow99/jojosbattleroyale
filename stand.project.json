@@ -1,0 +1,44 @@
+{
+  "name": "StandAwakeningDemo",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "StandCutscene": { "$path": "src/ReplicatedStorage/StandCutscene" },
+      "StandAssets": {
+        "$className": "Folder",
+        "StarPlatinum": { "$path": "src/assets/StarPlatinum.rbxmx" },
+        "StandUser": { "$path": "src/assets/StandUser.rbxmx" }
+      },
+      "StandMeshes": { "$className": "Folder" }
+    },
+    "ServerStorage": {
+      "RBX_ANIMSAVES": {
+        "$className": "Model",
+        "StandUser": { "$path": "src/animations/StandUser.rbxm" },
+        "StarPlatinum": { "$path": "src/animations/StarPlatinum.rbxm" }
+      }
+    },
+    "ServerScriptService": {
+      "StandDemo": { "$path": "src/ServerScriptService/StandDemo.server.luau" }
+    },
+    "StarterPlayer": {
+      "$properties": { "GameSettingsAvatar": "R6" },
+      "StarterPlayerScripts": {
+        "StandCutsceneClient": { "$path": "src/StarterPlayerScripts/StandCutsceneClient.client.luau" }
+      }
+    },
+    "Lighting": {
+      "$properties": {
+        "ClockTime": 15.5,
+        "Brightness": 2.5,
+        "GlobalShadows": true,
+        "OutdoorAmbient": [0.55, 0.52, 0.6],
+        "Technology": "Future"
+      }
+    },
+    "Workspace": {
+      "StandStage": { "$path": "src/workspace/DemoStage.rbxmx" },
+      "AnimationRigs": { "$path": "src/workspace/AnimationRigs.rbxmx" }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+# Minimal Roblox globals for linting game source with Selene. Selene's own Roblox stdlib
+# generator fails in this environment; luau-lsp performs the real Roblox API type check.
+base: luau
+globals:
+  game: { any: true }
+  workspace: { any: true }
+  script: { any: true }
+  Instance: { any: true }
+  Enum: { any: true }
+  CFrame: { any: true }
+  Vector2: { any: true }
+  Vector3: { any: true }
+  Color3: { any: true }
+  UDim: { any: true }
+  UDim2: { any: true }
+  ColorSequence: { any: true }
+  ColorSequenceKeypoint: { any: true }
+  NumberSequence: { any: true }
+  NumberSequenceKeypoint: { any: true }
+  NumberRange: { any: true }
+  task: { any: true }
+  warn: { any: true }

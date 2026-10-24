@@ -32,6 +32,16 @@ them with `apt-get install blender ffmpeg` when it has package-manager privilege
 run the asset check after any version change. CPU rendering is sufficient for
 small previews. Large-scale rendering would need a separate resource decision.
 
+Stand cutscene work also uses:
+
+- **Blender 4.3.2:** pinned, with its SHA-256 matching blender.org's published checksum. It
+  installs into `.tools/blender` via `python3 tools/get_blender.py`, because this image has
+  no system Blender. Rendering works only through Cycles (Eevee needs `libEGL`, which is
+  missing here).
+- **Browser preview:** the preinstalled Playwright Chromium with three.js 0.160.0 (npm, in
+  `.tools/preview`). `tools/stand/render.sh` uses it to render previews of the exact
+  generated files.
+
 ## What the checks prove
 
 `python3 tools/check.py` formats/lints the tooling fixtures, strictly type-checks

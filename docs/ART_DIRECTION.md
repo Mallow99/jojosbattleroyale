@@ -33,3 +33,13 @@ geometry; an attractive concept image is not evidence of a working game model.
 
 The existing rounded model and generator are retained only for history, with
 rejection notices. They are excluded from the current recommended asset direction.
+
+## R6 Star Platinum morph (October 24, 2026), awaiting review
+
+At the user's direction this model ignores the earlier source leads. Star Platinum was
+rebuilt on Roblox's actual R6 character: standard parts and joints, a Humanoid and the
+classic head mesh. Identity comes from Roblox-style textured body shells (muscle line art,
+face) and mesh accessories: a flowing mane, a gold headband with crest and ear guards, a red
+scarf, dome pauldrons, gauntlets, a belt and loincloth, knee guards and boots. Source,
+build steps and limits are in `docs/STAND_CUTSCENE.md`. It has not been viewed in Studio and
+is not approved until the user has reviewed it there.

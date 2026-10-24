@@ -103,6 +103,37 @@ def code():
                 process.wait()
 
 
+def stand():
+    """Star Platinum cutscene: generated files current, lint/types, place build, Lune checks."""
+    destination = ROOT / "artifacts/stand"
+    destination.mkdir(parents=True, exist_ok=True)
+    generated = ["src/assets", "src/animations", "src/workspace"]
+    run(BIN / "lune", "run", "tools/stand/build.luau")
+    status = subprocess.run(["git", "status", "--porcelain", "--", *generated], cwd=ROOT,
+                            capture_output=True, text=True, check=True).stdout
+    if status.strip():
+        raise RuntimeError("Generated stand files are stale; commit the output of tools/stand/build.luau:\n" + status)
+    print("PASS: generated rigs, stage and KeyframeSequences match tools/stand sources", flush=True)
+    run(BIN / "stylua", "--check", "src", "tools/stand", "tests/stand")
+    subprocess.run([str(BIN / "selene"), "../../src"], cwd=ROOT / "tools/selene", check=True, timeout=180)
+    run(BIN / "rojo", "build", "stand.project.json", "--output", destination / "StandAwakeningDemo.rbxl")
+    run(BIN / "rojo", "sourcemap", "stand.project.json", "--output", destination / "sourcemap.json")
+    run(BIN / "luau-lsp", "analyze", "--platform", "roblox", "--definitions", ".tools/robloxTypes.d.luau",
+        "--sourcemap", destination / "sourcemap.json", "src/ReplicatedStorage", "src/ServerScriptService",
+        "src/StarterPlayerScripts")
+    run(BIN / "lune", "run", "tests/stand/verify.luau")
+
+
+def stand_assets():
+    """Rebuild the morph meshes in the pinned Blender and round-trip the FBX."""
+    blender = ROOT / ".tools/blender/blender-4.3.2-linux-x64/blender"
+    if not blender.exists():
+        raise RuntimeError("Run python3 tools/get_blender.py first")
+    run("python3", "art/star_platinum/textures.py")
+    for script in ("art/star_platinum/build_morph.py", "tests/stand/fbx_check.py"):
+        run(blender, "-b", "--factory-startup", "--python-exit-code", "1", "--python", ROOT / script)
+
+
 def assets():
     for executable in ("blender", "ffmpeg", "ffprobe"):
         if not shutil.which(executable):
@@ -125,8 +156,13 @@ def assets():
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--assets", action="store_true", help="Also exercise Blender and FFmpeg")
+    parser.add_argument("--stand-assets", action="store_true",
+                        help="Also rebuild the Star Platinum morph in the pinned Blender and check the FBX")
     args = parser.parse_args()
     code()
+    stand()
+    if args.stand_assets:
+        stand_assets()
     if args.assets:
         assets()
     print("PASS: toolchain checks completed; no Roblox engine or service tests were run")
