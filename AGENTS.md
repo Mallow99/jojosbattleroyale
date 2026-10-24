@@ -15,7 +15,5 @@
 - Preserve Rojo 7.7.1 compatibility with the installed Mac plugin.
 - Keep purchases disabled. Do not invent experience IDs or credentials.
 - Never call Lune, serialization checks or synthetic load a Roblox playtest.
-- Record third-party resource source, exact revision, reuse terms, dependencies,
-  asset permissions and adaptation work before adoption. Cached candidates are
-  not approved dependencies. Do not execute downloaded game kits uninspected.
+- Do not execute downloaded game kits uninspected.
 - Favor the existing no-cost tools. Do not create paid subscriptions or rent GPUs.
