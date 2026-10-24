@@ -1,0 +1,6 @@
+.tools/
+artifacts/
+__pycache__/
+*.pyc
+.DS_Store
+*.rbxl.lock

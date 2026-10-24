@@ -1,0 +1,39 @@
+{
+  "status": "reference shortlist only; no replacement model acquired",
+  "rejected_direction": "rounded procedural Star Platinum prototype",
+  "working_direction": "Roblox body proportions and articulated rig; exact reference preference pending",
+  "candidates": [
+    {
+      "name": "Star Platinum The World Roblox",
+      "creator": "InspWinship",
+      "source": "https://sketchfab.com/3d-models/star-platinum-the-world-roblox-45900749eff04ffab2cc1c0d00d8a84d",
+      "preview": "https://media.sketchfab.com/models/45900749eff04ffab2cc1c0d00d8a84d/thumbnails/f2ffaae2ebc64fc68a54d40d2dc7582b/fc8f0e0f27d64d6eaeb8f6f1efb27ef6.jpeg",
+      "listed_terms": "CC Attribution; profile invites use in Roblox games",
+      "listed_triangles_approx": 120700,
+      "binary_acquired": false,
+      "rig_verified": false,
+      "adaptation": "Inspect mesh and rig; optimize if necessary; test Roblox import and animation"
+    },
+    {
+      "name": "Star Platinum OVA Roblox",
+      "creator": "InspWinship",
+      "source": "https://sketchfab.com/models/7b6e5108e737462cb4b90486453f0bc7/embed",
+      "listed_terms": "Exact model license not verified",
+      "binary_acquired": false,
+      "rig_verified": false,
+      "adaptation": "Verify license and package; inspect mesh and rig; test Roblox import"
+    },
+    {
+      "name": "Star platinum Roblox",
+      "creator": "suthiphan-kha22",
+      "source": "https://www.cgtrader.com/3d-models/character/other/star-platinum-roblox",
+      "listed_terms": "Royalty Free License",
+      "listed_price_usd": 2,
+      "listed_formats": ["BLEND", "FBX", "OBJ"],
+      "purchased": false,
+      "binary_acquired": false,
+      "rig_verified": false,
+      "adaptation": "Reference only under current zero-budget workflow"
+    }
+  ]
+}

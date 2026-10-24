@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "resources": [
+    {
+      "name": "ProfileStore",
+      "repo": "MadStudioRoblox/ProfileStore",
+      "commit": "45c9847cbcf1fc260369c50eb335aba7c35aecdd",
+      "url": "https://codeload.github.com/MadStudioRoblox/ProfileStore/zip/45c9847cbcf1fc260369c50eb335aba7c35aecdd",
+      "sha256": "60086742cb20685885ba7692e75a757e846e43c8208dc6a1266517367b27e732",
+      "status": "cached for review; not integrated or executed"
+    },
+    {
+      "name": "TestEZ",
+      "repo": "Roblox/testez",
+      "commit": "26a5247631279154c74425b94583c189b8447d0f",
+      "url": "https://codeload.github.com/Roblox/testez/zip/26a5247631279154c74425b94583c189b8447d0f",
+      "sha256": "8d7493348e5b8162df2063722003957fe066d56221d6a1a75c690d0f9c937335",
+      "status": "cached for review; not integrated or executed"
+    }
+  ]
+}

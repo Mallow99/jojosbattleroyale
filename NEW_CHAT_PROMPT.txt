@@ -1,0 +1,16 @@
+Read HANDOFF_NEW_CHAT.md and continue the Star Platinum model work from there.
+
+Use the current main branch of Mallow99/jojosbattleroyale as the source of project
+context. First verify that this new cloud environment really has network access.
+The source bundle from the prior chat is only a fallback snapshot; prefer the
+repository's current files.
+
+Find and inspect existing Roblox-style models first. The previous rounded
+procedural Star Platinum was rejected outright: it did not look like Roblox and
+did not fit our game. Do not reuse or polish it. I want an actual good model,
+with credible Roblox proportions, face, hair, costume and texture work.
+
+Continue autonomously within the free-tool budget. Keep the work in the cloud,
+do not request access to my Mac, and do not confuse a source preview or export
+check with a finished asset or a Roblox playtest. Deliver a credible candidate
+with previews of the actual geometry and editable/importable files.
