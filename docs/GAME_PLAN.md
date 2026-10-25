@@ -57,9 +57,9 @@ Resource reuse becomes an early workstream, before creating polished assets.
 
 Search for creator-released Stand kits, reusable rigs and animations, environment packs, effects, UI components, and established utility libraries. For example, [ProfileStore](https://madstudioroblox.github.io/ProfileStore/) provides saving and session-locking functionality worth evaluating.
 
-**YBA resources are candidates to investigate; no reusable, creator-authorized YBA source has been verified yet.** A copied game being widespread does not establish permission or compatibility.
+**Update (October 25, 2026):** the user supplied `Main game resources.rbxl` from the YBA:AU team with permission to use it; see `docs/MAIN_RESOURCES_INVENTORY.md`.
 
-For each candidate, record its source, reuse terms, dependencies, required asset permissions, and adaptation cost. Inspect scripts in an isolated test place before running them. Verify meshes, animations, and audio under our experience’s ownership; an asset working in its original game does not establish that it will load in ours. [Roblox asset permissions](https://create.roblox.com/docs/projects/assets/packages).
+Verify meshes, animations, and audio load under our experience; an asset working in its original game does not establish that it will load in ours. [Roblox asset permissions](https://create.roblox.com/docs/projects/assets/packages).
 
 Adopt useful components individually. Keep match rules, combat validation, inventory, and purchases understandable and maintained in our repository.
 

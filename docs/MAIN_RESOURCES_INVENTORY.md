@@ -6,22 +6,20 @@ below are instance counts from that pass. Sections marked "binary scan" come fro
 small Python reader of the file's string properties, because Lune 0.11.1 cannot read
 Content properties.
 
-## Provenance and reuse: unresolved
+## Source and permission
 
 The place is a full game: 354,345 instances, 1,194 scripts (about 326,000 lines) and
-hard-coded production place IDs. Its loading-screen credits list a development team
+hard-coded production place IDs. Its loading-screen credits list the YBA:AU team
 (founder/head developer zakuxo, lead programmers Artyom_MM and fisqb, VFX weakylol,
-modelers rse_ill, focus33333333, Grand_Gator and S0_Build, and others), and its asset
-folder is named `YBA:AU ASSETS`. `docs/RESOURCES.md` records that no creator-authorized
-YBA kit had been established. Until the source and permission for this file are
-recorded, treat everything here as inspected reference material, not as approved
-dependencies.
+modelers rse_ill, focus33333333, Grand_Gator and S0_Build, and others). The user
+obtained it from them and confirmed on October 25, 2026 that we have permission to
+use everything in it.
 
-Asset-ID finding (binary scan): the models, sounds and animations are not embedded.
+Technical note (binary scan): the models, sounds and animations are not embedded.
 They point at Roblox asset IDs (about 4,700 unique mesh IDs, 1,870 sound IDs, 880
-animation IDs, 1,760 texture IDs). Those load in another experience only if the
-owning account granted that experience permission, so each one needs verifying in
-our private development experience.
+animation IDs, 1,760 texture IDs). Roblox loads an asset in our experience only if
+it is public or its owner shared it with our experience/group, so the first Studio
+session should confirm which ones load.
 
 ## What is in it
 
@@ -58,7 +56,7 @@ Crossfire impact, Ankh, red bind pieces, rocks). Its rig and moveset would need 
 
 ## Usable now versus reference only
 
-Usable as concrete material for our blockout, once permission is settled:
+Usable as concrete material for the game:
 
 - Stand rig structure: the `StandMorph` R15 MeshPart layout with an `AnimationController`,
   plus the idle/move/summon wiring that drives it.
@@ -79,9 +77,15 @@ Reference only (do not adopt as written):
 - Non-JoJo content: Gojo, Goku, Zeno, Aizen, Genos, Vergil, Law, Gura and other crossover
   Stands, tools and specs.
 
-## Next steps before adoption
+## What the foundation extracted
 
-1. Confirm who made this file and the permission to reuse it.
-2. In a private development experience, check which mesh, animation and sound IDs load.
-3. Extract one Stand (Star Platinum) to its own `.rbxm` and inspect it without running scripts.
-4. Record source, asset IDs, credits, dependencies and adaptation work per `docs/RESOURCES.md`.
+`tools/extract_resources.luau` writes these to `assets/rbx/` with every script stripped:
+eight Stand packages (Star Platinum, The World, Crazy Diamond, King Crimson, Gold
+Experience, Whitesnake, Silver Chariot, The Hand) with idle/move animations, aura and
+summon sound; Chariot Requiem as the boss; 26 skins for those Stands from the place's
+own `ObtainableSkins` table; the disc, Stand Arrow and Requiem Arrow models; Katana,
+Dagger, DIO's Knife and Shovel tools; Tea as a heal; the punch-combo animations and hit
+sounds; the Magician's Red effects; the town map with its item-spawn markers and named
+districts; and the sky, atmosphere and post-processing. Rerun it after changing the list:
+
+    lune run tools/extract_resources.luau "Main game resources.rbxl"

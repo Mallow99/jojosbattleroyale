@@ -1,0 +1,53 @@
+{
+  "name": "JoJoBR-Lobby",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "Shared": { "$path": "src/shared" }
+    },
+    "ServerScriptService": {
+      "ServerShared": { "$path": "src/server" },
+      "Lobby": { "$path": "src/lobby/server" }
+    },
+    "StarterPlayer": {
+      "StarterPlayerScripts": {
+        "Lobby": { "$path": "src/lobby/client" }
+      }
+    },
+    "Lighting": {
+      "$properties": {
+        "Brightness": 1.25,
+        "Ambient": [0.3137255, 0.34509805, 0.47058824],
+        "OutdoorAmbient": [0.4509804, 0.4509804, 0.48235294],
+        "GlobalShadows": true
+      },
+      "Sky": { "$path": "assets/rbx/lighting/Sky.rbxm" },
+      "Atmosphere": { "$path": "assets/rbx/lighting/Atmosphere.rbxm" }
+    },
+    "Workspace": {
+      "$properties": { "StreamingEnabled": false },
+      "LobbyFloor": {
+        "$className": "Part",
+        "$properties": {
+          "Anchored": true,
+          "Size": [160, 2, 160],
+          "Position": [0, 0, 0],
+          "Material": "Marble",
+          "Color": [0.17, 0.14, 0.24]
+        }
+      },
+      "LobbySpawn": {
+        "$className": "SpawnLocation",
+        "$properties": {
+          "Anchored": true,
+          "Neutral": true,
+          "Size": [12, 1, 12],
+          "Position": [0, 1.5, 0],
+          "Material": "Neon",
+          "Color": [0.77, 0.47, 1.0],
+          "Duration": 0
+        }
+      }
+    }
+  }
+}

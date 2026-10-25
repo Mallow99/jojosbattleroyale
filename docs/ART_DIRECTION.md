@@ -26,7 +26,7 @@ geometry; an attractive concept image is not evidence of a working game model.
 - Inspect candidate previews before adapting or rebuilding geometry.
 - Prefer models already designed around Roblox body dimensions and joints.
 - Inspect acquired packages without running their embedded scripts.
-- Record meshes, textures, rig structure, dependencies, provenance and reuse terms.
+- Record meshes, textures, rig structure and dependencies.
 - Verify the complete character silhouette, face, hair and armor before animation.
 - Review deformation, render cost and Roblox asset permissions separately from art quality.
 - Passing mesh export or rig tests does not establish acceptable visual quality.

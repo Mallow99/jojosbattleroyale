@@ -103,6 +103,31 @@ def code():
                 process.wait()
 
 
+def game():
+    """Lint, type-check, build and test the actual lobby and match places."""
+    destination = ROOT / "artifacts/game"
+    destination.mkdir(parents=True, exist_ok=True)
+    run(BIN / "stylua", "--check", "src", "tests/gameplay", "tools/extract_resources.luau")
+    run(BIN / "selene", "src", "tests/gameplay")
+    run(BIN / "lune", "run", "tests/gameplay/run.luau")
+    for place, sources in (("lobby", ["src/shared", "src/server", "src/lobby"]),
+                           ("match", ["src/shared", "src/server", "src/match"])):
+        project = ROOT / f"{place}.project.json"
+        sourcemap = destination / f"{place}.sourcemap.json"
+        run(BIN / "rojo", "build", project, "--output", destination / f"{place}.rbxl")
+        run(BIN / "rojo", "sourcemap", project, "--output", sourcemap)
+        result = subprocess.run(
+            [str(BIN / "luau-lsp"), "analyze", "--platform", "roblox", "--definitions",
+             ".tools/robloxTypes.d.luau", "--sourcemap", str(sourcemap), *sources],
+            cwd=ROOT, capture_output=True, text=True, timeout=180)
+        problems = [line for line in (result.stdout + result.stderr).splitlines()
+                    if line and not line.startswith("[")]
+        if result.returncode != 0 or problems:
+            raise RuntimeError(f"luau-lsp found problems in the {place} place:\n" + "\n".join(problems))
+        print(f"PASS: {place} sources type-check against Roblox definitions", flush=True)
+    run(BIN / "lune", "run", "tests/gameplay/places.luau")
+
+
 def assets():
     for executable in ("blender", "ffmpeg", "ffprobe"):
         if not shutil.which(executable):
@@ -127,9 +152,10 @@ def main():
     parser.add_argument("--assets", action="store_true", help="Also exercise Blender and FFmpeg")
     args = parser.parse_args()
     code()
+    game()
     if args.assets:
         assets()
-    print("PASS: toolchain checks completed; no Roblox engine or service tests were run")
+    print("PASS: toolchain and game checks completed; no Roblox engine or service tests were run")
 
 
 if __name__ == "__main__":

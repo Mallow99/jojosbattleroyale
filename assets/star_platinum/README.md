@@ -51,4 +51,4 @@ After an art-direction review, refine the silhouette/face, replace intersecting
 joint surfaces with production topology, establish a tested Roblox skeleton and
 texture atlas, then produce summon/idle/punch/barrage animations.
 
-See [existing-model research](../../docs/MODEL_SEARCH.md) for source alternatives.
+Stand models now come from `Main game resources.rbxl`; see `docs/MAIN_RESOURCES_INVENTORY.md`.

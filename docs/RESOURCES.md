@@ -16,14 +16,10 @@ It is not a full security audit or a test of runtime compatibility. Read the ful
 selected source and exercise it in isolation before adopting it. ProfileStore's
 purpose is documented by [its creator](https://madstudioroblox.github.io/ProfileStore/).
 
-No creator-authorized YBA kit or reusable Stand model was established. No scraped,
-leaked or copied game kit was imported. The Blender fixture is original procedural
-test geometry and depends on no outside asset IDs. Environment and Stand packs
-should be selected against actual art requirements after the initial blockout.
+## Main game resources
 
-For each future asset, record source URL, creator, exact revision/asset ID,
-license evidence, required credit/notices, dependencies, ownership permissions,
-adaptation work, and development-experience import/test results. AI-generated
-assets additionally need the provider, generation settings and applicable output
-terms. A package license does not establish permission to use unrelated franchise
-art, animations or audio inside that package.
+`Main game resources.rbxl` (repository root) came from the YBA:AU team; the user has
+permission to use all of it. Its contents are listed in
+`docs/MAIN_RESOURCES_INVENTORY.md`, and the assets the game uses are extracted into
+`assets/rbx/` by `tools/extract_resources.luau`. Its meshes, sounds and animations are
+Roblox asset IDs, so confirm in Studio that they load in our experience.

@@ -1,0 +1,89 @@
+{
+  "name": "JoJoBR-Match",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "Shared": { "$path": "src/shared" },
+      "Assets": {
+        "$className": "Folder",
+        "CombatAnims": { "$path": "assets/rbx/shared/CombatAnims.rbxm" },
+        "CombatSounds": { "$path": "assets/rbx/shared/CombatSounds.rbxm" }
+      }
+    },
+    "ServerScriptService": {
+      "ServerShared": { "$path": "src/server" },
+      "Match": { "$path": "src/match/server" }
+    },
+    "ServerStorage": {
+      "Assets": {
+        "$className": "Folder",
+        "Stands": { "$path": "assets/rbx/stands" },
+        "Skins": { "$path": "assets/rbx/skins" },
+        "Boss": { "$path": "assets/rbx/boss" },
+        "Items": { "$path": "assets/rbx/items" },
+        "Weapons": { "$path": "assets/rbx/weapons" },
+        "Heals": { "$path": "assets/rbx/heals" },
+        "Effects": { "$path": "assets/rbx/effects" }
+      }
+    },
+    "StarterPlayer": {
+      "StarterPlayerScripts": {
+        "Match": { "$path": "src/match/client" }
+      }
+    },
+    "Players": {
+      "$properties": { "CharacterAutoLoads": false }
+    },
+    "Lighting": {
+      "$properties": {
+        "Brightness": 1.25,
+        "Ambient": [0.3137255, 0.34509805, 0.47058824],
+        "OutdoorAmbient": [0.4509804, 0.4509804, 0.48235294],
+        "ColorShift_Top": [1, 0.94509804, 0.90588236],
+        "GeographicLatitude": -7.757,
+        "ExposureCompensation": 0.1,
+        "EnvironmentDiffuseScale": 0.5,
+        "EnvironmentSpecularScale": 1,
+        "GlobalShadows": true,
+        "ShadowSoftness": 1
+      },
+      "Sky": { "$path": "assets/rbx/lighting/Sky.rbxm" },
+      "Atmosphere": { "$path": "assets/rbx/lighting/Atmosphere.rbxm" },
+      "Bloom": { "$path": "assets/rbx/lighting/Bloom.rbxm" },
+      "SunRays": { "$path": "assets/rbx/lighting/SunRays.rbxm" },
+      "ColorCorrection": { "$path": "assets/rbx/lighting/ColorCorrection.rbxm" }
+    },
+    "Workspace": {
+      "$properties": { "StreamingEnabled": true },
+      "Map": { "$path": "assets/rbx/map/Town.rbxm" },
+      "LootSpawns": { "$path": "assets/rbx/map/LootSpawns.rbxm" },
+      "Districts": { "$path": "assets/rbx/map/Districts.rbxm" },
+      "WaitingRoom": {
+        "$className": "Model",
+        "$properties": { "ModelStreamingMode": "Persistent" },
+        "Floor": {
+          "$className": "Part",
+          "$properties": {
+            "Anchored": true,
+            "Size": [120, 2, 120],
+            "Position": [-1516, 2700, -3048],
+            "Material": "Marble",
+            "Color": [0.17, 0.14, 0.24]
+          }
+        },
+        "Spawn": {
+          "$className": "SpawnLocation",
+          "$properties": {
+            "Anchored": true,
+            "Neutral": true,
+            "Size": [12, 1, 12],
+            "Position": [-1516, 2701.5, -3048],
+            "Material": "Neon",
+            "Color": [0.77, 0.47, 1.0],
+            "Duration": 0
+          }
+        }
+      }
+    }
+  }
+}
